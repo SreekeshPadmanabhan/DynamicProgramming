@@ -1,0 +1,16 @@
+
+Issues:
+The linear Memory LCS approaches crashes out for some reason. Debugged, and it correctly calculated till some point, before crashing.
+
+References:
+http://www.cplusplus.com/doc/tutorial/files/
+http://www.cplusplus.com/reference/string/string/copy/
+http://www.cplusplus.com/reference/clibrary/cstring/memset/
+http://www.cplusplus.com/reference/clibrary/cmath/floor/
+http://www.cplusplus.com/reference/stl/vector/pop_back/
+http://www.cplusplus.com/reference/clibrary/cstdlib/malloc/
+http://www.cplusplus.com/reference/clibrary/cstdlib/realloc/
+
+Besides these, other c++ related sites and PDFs were used, especially for pointers and 2D matrix allocation.
+References shall be produced on demand.
+All work are original.
