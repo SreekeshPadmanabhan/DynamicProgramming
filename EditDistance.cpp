@@ -12,7 +12,7 @@ using namespace std;
 
 int main(int argc, char** argv) {
   string line;
-  ifstream myfile ("data3.txt");
+  ifstream myfile ("data.txt");
   
   char *left=NULL;char *top=NULL;
   int *rone=NULL;int *rtwo=NULL;
