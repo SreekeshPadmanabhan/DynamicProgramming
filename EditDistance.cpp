@@ -1,3 +1,4 @@
+//Original code by Sreekesh Padmanabhan ©
 //Edit distance between string S1 and S2 is the minimum number of symbol deletions required to transform S1 and S2 
 //into a common string
 
