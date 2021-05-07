@@ -72,7 +72,7 @@ vector <char> lcs_recursive(char *topn,size_t n,char *leftm,size_t m,vector <cha
    } 
    return LCS;   
   } else {
-/*----------------------------------------------------------------------------*/      
+/*-rfwd-----------------------------------------------------------------------*/      
   base = (int *) malloc((n+1)*sizeof(int));                   //initial base row
   for (col = 0; col < n+1; col++){*(base+col)=col;}            //initialize base
   rfwd=(int *) malloc((n+1) * sizeof(int));                            //fwd row
@@ -97,7 +97,7 @@ vector <char> lcs_recursive(char *topn,size_t n,char *leftm,size_t m,vector <cha
 /*-left shift top & left by 1-------------------------------------------------*/  
   memcpy(top,top+1,sizeof(char)*(n));memset(top+n,'-',sizeof(char));   //<<shift
   memcpy(left,left+1,sizeof(char)*(m));memset(left+m,'-',sizeof(char));//<<shift
-/*----------------------------------------------------------------------------*/    
+/*-rrvs-----------------------------------------------------------------------*/    
   for (col = n;col>=0;col--){*(base+col)=(n-col);}cout<<endl;  //initialize base
   rrvs=(int *) malloc((n+1) * sizeof(int));                            //rvs row
   for (row=m-1;row>=(floor((m)/2));row--)    //NOT floor(m/2)+1@ shift(top/left)
