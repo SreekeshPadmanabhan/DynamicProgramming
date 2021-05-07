@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
    
   while (!LCS.empty())
   {
-    printf("%c ",LCS.back());                             //print final stack
+    printf("%c ",LCS.back());                               //print final stack
     LCS.pop_back();
   }    
   dpfile.close(); 
@@ -59,7 +59,7 @@ vector <char> lcs_recursive(char *topn,size_t n,char *leftm,size_t m,vector <cha
   if (n==1){
    for (row = 0; row < m+1; row++)
    {
-    if(*(top+1)== *(left+row)) {        //symbol match, push_back X[0] on to LCS
+    if(*(top+1)== *(left+row)) {      //symbol match, push_back top[0] on to LCS
     LCS.push_back(*(top+1));cout<<*(top+1);
     }
    }   
@@ -67,7 +67,7 @@ vector <char> lcs_recursive(char *topn,size_t n,char *leftm,size_t m,vector <cha
   } else if (m == 1){
    for (col = 0; col < n+1; col++)
    {
-    if(*(left+1)== *(top+col)) {        //symbol match, push_back Y[0] on to LCS
+    if(*(left+1)== *(top+col)) {     //symbol match, push_back left[0] on to LCS
     LCS.push_back(*(left+1));cout<<*(left+1);
     }
    } 
