@@ -64,17 +64,12 @@ class DP:
                 lbase = rrvs
             print("rrvs:",rrvs)
 
-        edistmin=0
-        edist=[None]*len(self.top)
-        for col in range(len(self.top)):
-            edist[col]=rfwd[col]
-            if (edistmin == 0):
-                edistmin = edist[col]
-            elif edist[col] < edistmin:
-                y=col                                       #NOT y-1 as per program logic
-                edistmin = edist[col]
-        edistmin=rfwd[y]+rrvs[y]
-        print(rfwd[y],rrvs[y],edistmin)
+        edistance=[None]*len(self.top)
+        for x in range(len(self.top)):
+            edistance[x]=rfwd[x]+rrvs[x]
+        # print("edistance:",edistance)
+        edistmin=min(edistance)
+        print(edistmin)
 
         # x_front=self.left[:(len(self.left))/2]
         # x_back=[None]*(len(self.left)-len(self.left)/2)
