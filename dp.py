@@ -10,8 +10,6 @@ class DP:
             self.top.append(x)
         for y in left:
             self.left.append(y)
-        # self.top  = [None,"a","g","t","a","c","g","t","c","a","t"] #[None] * (len(self.top)+1)
-        # self.left = [None,"g","t","a","t","c","g","t","a","t"] #[None] * (len(self.top)+1)
         self.rone = [None] * (len(self.top))
         self.rtwo = [None] * (len(self.top))
         self.nedit = 0
@@ -85,22 +83,15 @@ class DP:
         print(f"{len(self.left)}")
         self.rone = [col for col in range(len(self.top)+1)]
         for row in range(1,len(self.left)): 
-            # print(f"{row}:{self.rone}")
             self.rtwo[0] = row
             for col in range(1,len(self.top)):
-                # print(f"1.row:{row} col:{col}")#" TOP:{self.top[col]}|LEFT:{self.left[row]}")
                 if(self.top[col]==self.left[row]):
                     self.rtwo[col] = self.rone[col-1]
-                    # print(f"TWO:{self.rtwo}")
-                    # print(f"2.row:{row} col:{col} {self.rone[col-1]}")
                 else:
-                    # print(f"TWO:{self.rtwo}")
-                    # print(f"3.row:{row} col:{col} TOP:{self.rtwo[col-1]}|LEFT:{self.rone[col]}")
                     if(self.rtwo[col-1]<self.rone[col]):
                         self.rtwo[col]=self.rtwo[col-1]+1              #(@prvs col,same row)+1 
                     else:
                         self.rtwo[col]=self.rone[col]+1                #(@prvs row,same col)+1 
-                # print(f"4. ONE:{self.rone} TWO:{self.rtwo}")
             self.rone=self.rtwo.copy()
             print(self.rtwo)
         self.nedit = ((len(self.top)+len(self.left))-(self.rtwo[0]+len(self.top)))
